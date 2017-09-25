@@ -35,6 +35,5 @@
             <TextBlock Grid.Column="2" Grid.Row="0" Margin="0,0,5,0"  x:Uid="StartDay" />
             <CalendarDatePicker x:Name="StartDayValueXAML" Grid.Column="2" Grid.Row="1" DateFormat="{}{dayofweek.full}‎, ‎{day.integer} {month.full}‎, ‎{year.full}" Margin="10,0,0,0" Width="300" />
         </Grid>
-
     </Grid>
 </Page>
