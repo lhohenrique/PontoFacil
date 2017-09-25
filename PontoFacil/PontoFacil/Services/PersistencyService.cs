@@ -3,8 +3,6 @@ using PontoFacil.Models;
 using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using Windows.Storage;
 
@@ -45,7 +43,7 @@ namespace PontoFacil.Services
         #region Construcutor
         private PersistencyService()
         {
-            DATABASE_PATH = DATABASE_FOLDER + DATA_FILE_NAME;
+            DATABASE_PATH = DATABASE_FOLDER + "\\" + DATA_FILE_NAME;
 
             this.clockInList = new List<ClockIn>();
         }
@@ -59,14 +57,28 @@ namespace PontoFacil.Services
         #endregion
 
         #region Methods
-        public void persist()
+        public async Task persist()
         {
-            File.WriteAllText(DATABASE_PATH, JsonConvert.SerializeObject(persistencyService));
+            await Task.Run(() =>
+                File.WriteAllText(DATABASE_PATH, JsonConvert.SerializeObject(persistencyService))
+            );
         }
 
         public void restore()
         {
-            persistencyService = JsonConvert.DeserializeObject<PersistencyService>(File.ReadAllText(DATABASE_PATH));
+            try
+            {
+                string result = File.ReadAllText(DATABASE_PATH);
+                persistencyService = JsonConvert.DeserializeObject<PersistencyService>(result);
+            }
+            catch (FileNotFoundException fileNotFoundException)
+            {
+                Console.WriteLine(fileNotFoundException.Message);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
         }
 
         public void saveClockIn(ClockIn clockIn)

@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using PontoFacil.Models;
+using System.Threading.Tasks;
 
 namespace PontoFacil.Services
 {
@@ -9,7 +10,7 @@ namespace PontoFacil.Services
         Planning MyPlanning { get; set; }
         Profile MyProfile { get; set; }
 
-        void persist();
+        Task persist();
         void restore();
         void saveClockIn(ClockIn clockIn);
         void savePlanning(Planning planning);

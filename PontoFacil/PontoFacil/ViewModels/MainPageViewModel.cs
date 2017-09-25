@@ -1,9 +1,5 @@
-﻿using PontoFacil.Services;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using PontoFacil.Models;
+using PontoFacil.Services;
 
 namespace PontoFacil.ViewModels
 {
@@ -11,6 +7,7 @@ namespace PontoFacil.ViewModels
     {
         public MainPageViewModel()
         {
+            
         }
     }
 }
