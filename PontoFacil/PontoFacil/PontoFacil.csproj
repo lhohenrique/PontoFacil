@@ -95,10 +95,36 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Models\ClockIn.cs" />
+    <Compile Include="Models\Planning.cs" />
+    <Compile Include="Models\Profile.cs" />
+    <Compile Include="PageTokens.cs" />
+    <Compile Include="Repositories\IRepository.cs" />
+    <Compile Include="Repositories\Repository.cs" />
+    <Compile Include="Services\ClockInService.cs" />
+    <Compile Include="Services\NotificationService.cs" />
+    <Compile Include="Services\PersistencyService.cs" />
+    <Compile Include="Services\SettingsService.cs" />
+    <Compile Include="UserControls\HamburgerMenu.xaml.cs">
+      <DependentUpon>HamburgerMenu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModels\HistoryViewModel.cs" />
+    <Compile Include="ViewModels\MainPageViewModel.cs" />
+    <Compile Include="ViewModels\PlanningViewModel.cs" />
+    <Compile Include="ViewModels\SettingsViewModel.cs" />
+    <Compile Include="Views\HistoryPage.xaml.cs">
+      <DependentUpon>HistoryPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Views\PlanningPage.xaml.cs">
+      <DependentUpon>PlanningPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SettingsPage.xaml.cs">
+      <DependentUpon>SettingsPage.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">
@@ -121,21 +147,39 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="UserControls\HamburgerMenu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\HistoryPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\MainPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\PlanningPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SettingsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform">
       <Version>5.4.0</Version>
     </PackageReference>
+    <PackageReference Include="Prism.Unity">
+      <Version>6.3.0</Version>
+    </PackageReference>
+    <PackageReference Include="Prism.Windows">
+      <Version>6.3.0</Version>
+    </PackageReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Models\" />
-    <Folder Include="Services\" />
-    <Folder Include="ViewModels\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>

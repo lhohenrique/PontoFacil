@@ -8,7 +8,36 @@
     mc:Ignorable="d"
     prism:ViewModelLocator.AutoWireViewModel="true">
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-
-    </Grid>
+    <SplitView x:Name="MySplitView" DisplayMode="CompactOverlay" IsPaneOpen="False" 
+               CompactPaneLength="50" OpenPaneLength="130">
+        <SplitView.Pane>
+            <StackPanel Background="#0063B1">
+                <Button x:Name="HamburgerButton" FontFamily="Segoe MDL2 Assets" Content="&#xE700;" Foreground="White"
+                    Width="50" Height="50" Background="Transparent" Click="HamburgerButton_Click"/>
+                <StackPanel Orientation="Horizontal">
+                    <Button x:Name="MenuButtonHome" FontFamily="Segoe MDL2 Assets" Content="&#xE10F;" Foreground="White"
+                        Width="50" Height="50" Background="Transparent" ToolTipService.ToolTip="Home" Click="MenuButtonHome_Click"/>
+                    <TextBlock Text="Home" FontSize="16" VerticalAlignment="Center" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Button x:Name="MenuButtonPlanning" FontFamily="Segoe MDL2 Assets" Content="&#xE77F;" Foreground="White"
+                        Width="50" Height="50" Background="Transparent" ToolTipService.ToolTip="Planning" Click="MenuButtonPlanning_Click"/>
+                    <TextBlock Text="Planning" FontSize="16" VerticalAlignment="Center" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Button x:Name="MenuButtonHistory" FontFamily="Segoe MDL2 Assets" Content="&#xE787;" Foreground="White"
+                        Width="50" Height="50" Background="Transparent" ToolTipService.ToolTip="History" Click="MenuButtonHistory_Click"/>
+                    <TextBlock Text="History" FontSize="16" VerticalAlignment="Center" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Button x:Name="MenuButtonSettings" FontFamily="Segoe MDL2 Assets" Content="&#xE713;" Foreground="White"
+                        Width="50" Height="50" Background="Transparent" ToolTipService.ToolTip="Settings" Click="MenuButtonSettings_Click"/>
+                    <TextBlock Text="Settings" FontSize="16" VerticalAlignment="Center" />
+                </StackPanel>
+            </StackPanel>
+        </SplitView.Pane>
+        <SplitView.Content>
+            <Frame x:Name="FrameContent" />
+        </SplitView.Content>
+    </SplitView>
 </Page>
