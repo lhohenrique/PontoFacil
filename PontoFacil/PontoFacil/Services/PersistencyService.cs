@@ -13,7 +13,7 @@ namespace PontoFacil.Services
     class PersistencyService : IPersistencyService
     {
         #region Properties
-        private readonly string DATA_FILE_NAME = "PontoFileData.txt";
+        private readonly string DATA_FILE_NAME = "PontoFacilData.txt";
         private readonly string DATABASE_FOLDER = ApplicationData.Current.LocalFolder.Path;
         private string DATABASE_PATH;
 
